@@ -1006,3 +1006,34 @@
 
 
 
+# New codes 
+
+def encodeString(arr):
+    res = ""
+    for i in arr:
+        res += str(len(i)) + '#' + i
+    return res
+
+# 3#wed3#set3#ped
+
+def decodeString(str):
+    res, i = [], 0
+    while i < len(str):
+        j = i
+        while str[j] != '#':
+            j += 1
+        length = int(str[i:j])
+        i = j + 1
+        j = i + length
+        res.append(str[i:j])
+        i = j
+    return res
+
+strArr = ['wed', 'set', 'ped']
+encodedStr = encodeString(strArr)
+print(encodedStr)
+print(decodeString(encodedStr))
+
+
+
+
