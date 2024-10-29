@@ -1035,5 +1035,19 @@ print(encodedStr)
 print(decodeString(encodedStr))
 
 
+def isZero(arr, n, w):
+    res = []
+    for i in range(n - w + 1):
+        window = arr[i:i + w]
+        if 0 in window:
+            res.append(i + window.index(0) + 1) # this makes two pair arrays for easy comparing
+        else:
+            res.append(-1)
+    print(res)
+# 2 2 -1 -1 6 6
+arr = [1, 0, 6, 7, 4, 0, 9]
+n = 7
+w = 2
+print(isZero(arr, n, w))
 
 
