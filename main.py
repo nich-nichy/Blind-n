@@ -1051,3 +1051,16 @@ w = 2
 print(isZero(arr, n, w))
 
 
+def passportNumbers(arr, n):
+    res = []
+    arr = arr.split(" ")
+    for i in arr:
+        if i not in res:
+            res.append(i)
+    return ' '.join(map(str, res))
+
+n = 5
+arr = "A23 B56 B56 C79 D16"
+print(passportNumbers(arr, n))
+
+
