@@ -1112,4 +1112,22 @@ print(intToRoman(58))
 print(intToRoman(1994))
 
 
+def twoSumTwo(arr, target):
+    l, r = 0, len(arr) - 1
+
+    while l < r:
+        diff = arr[l] + arr[r]
+        if diff > target:
+            r -= 1
+        elif diff < target:
+            l += 1
+        else:
+            return [l+1, r+1]
+    return []
+
+# numbers = [2,7,11,15]
+target = 6
+numbers = [2,3,4]
+print(twoSumTwo(numbers, target))
+
 
