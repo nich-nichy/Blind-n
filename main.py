@@ -1190,3 +1190,24 @@ def bestTimeToBuy(prices):
 prices = [7,1,5,3,6,4]
 # prices = [7,6,4,3,1]
 print(bestTimeToBuy(prices))
+
+def lengthOfLongestSubstring(s):
+    l = 0
+    res = 0
+    charSet = set()
+    for r in range(len(s)):
+        while s[r] in charSet:
+            charSet.remove(s[l])
+            l += 1
+        charSet.add(s[r])
+        res = max(res, r - l + 1)
+    return res
+
+s1 = "abcabcbb"
+s2 = "bbbbb"
+s3 = "pwwkew"
+
+print(lengthOfLongestSubstring(s1))
+print(lengthOfLongestSubstring(s2))
+print(lengthOfLongestSubstring(s3))
+
