@@ -1314,3 +1314,26 @@ class Solution:
                 stack.append(c)
         
         return True if not stack else False
+
+def findMin(arr):
+    res = arr[0]
+    l, r = 0, len(arr) - 1
+
+    while l <= r:
+        if arr[l] < arr[r]:
+            res = min(res, arr[l])
+            break
+
+        m = (l + r) // 2
+        res = min(res, arr[m])
+
+        if arr[m] >= arr[l]:
+            l = m + 1
+        else:
+            r = m - 1
+    return res
+
+
+# print(findMin([3,4,5,1,2])) # 1
+print(findMin([4,5,6,7,0,1,2])) # 0
+# print(findMin([11,13,15,17])) # 11
