@@ -1361,6 +1361,17 @@ def search(arr, target):
                 r = mid + 1
     return -1
 
+
+def reverseList(linkedL):
+    prev, curr = None, linkedL
+
+    while curr:
+        nxt = curr.next
+        curr.next = prev
+        prev = curr
+        curr = nxt
+    return prev
+
 target = 2
 print(search([4,5,6,7,0,1,2], target)) # 4
 
