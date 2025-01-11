@@ -1395,4 +1395,36 @@ def reorderList(self, head: Optional[ListNode]) -> None:
             second.next = tmp1
             first, second = tmp1, tmp2
 
+def findElement(arr):
+    n = len(arr)
+    if n < 3:
+        return -1
+
+    left_max = [float('-inf')] * n
+    for i in range(1, n):
+        l_m = left_max[i - 1]
+        a_l = arr[i - 1]
+        print(l_m, a_l)
+        mr_max = max(left_max[i - 1], arr[i - 1])
+        print(mr_max)
+        left_max[i] = max(left_max[i - 1], arr[i - 1])
+
+    right_min = [float('inf')] * n
+    for i in range(n - 2, -1, -1):
+        l_m = right_min[i + 1]
+        a_l = arr[i + 1]
+        print(l_m, a_l)
+        mr_min = min(right_min[i + 1], arr[i + 1])
+        print(mr_min)
+        right_min[i] = min(right_min[i + 1], arr[i + 1])
+
+    for i in range(1, n-1):
+        if left_max[i] < arr[i] < right_min[i]:
+            return arr[i]
+    return -1
+
+print(findElement([4, 2, 5, 7]))
+# print(findElement([98, 40, 65, 59, 27, 20, 45, 87, 34, 99]))
+
+
 
