@@ -1426,5 +1426,18 @@ def findElement(arr):
 print(findElement([4, 2, 5, 7]))
 # print(findElement([98, 40, 65, 59, 27, 20, 45, 87, 34, 99]))
 
+def check_alpha(word):
+    return 'a' <= word <= 'z' or 'A' <= word <= 'Z'
+
+def kPangram(s, k):
+    no_of = len(s) - s.count(' ')
+    if no_of < 26:
+        return False
+    if k > 25:
+        return True
+    alpha_set = set('abcdefghijklmnopqrstuvwxyz')
+    current_char = set(c.lower() for c in s if check_alpha(c))
+    missing = alpha_set - current_char
+    return len(missing) <= k
 
 
