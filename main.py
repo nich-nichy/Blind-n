@@ -1448,4 +1448,27 @@ def checkYear (self, n):
             return True
         else:
             return False
+
+
+def modifyAndRearrangeArr(arr):
+    res = []
+    i = 0
+    n = len(arr)
+    while i < n:
+        if i < n - 1 and arr[i] == arr[i + 1]:
+            res.append(arr[i] + arr[i + 1])
+            i += 2
+        elif arr[i] != 0:
+            res.append(arr[i])
+            i += 1
+        else:
+            i += 1
+    while len(res) < n:
+        res.append(0)
+    return res
+
+print(modifyAndRearrangeArr([2, 2, 0, 4, 0, 8]))
+# [4, 4, 8, 0, 0, 0]
+# print(modifyAndRearrangeArr([0, 2, 2, 2, 0, 6, 6, 0, 0, 8]))
+# [4, 2, 12, 8, 0, 0, 0, 0, 0, 0]
         
