@@ -1449,6 +1449,11 @@ def checkYear (self, n):
         else:
             return False
 
+modifyAndRearrangeArr
+# Check two nums are equal if yes put in arr
+# Check if not zero
+# Add others
+# Push zeros
 
 def modifyAndRearrangeArr(arr):
     res = []
@@ -1471,4 +1476,81 @@ print(modifyAndRearrangeArr([2, 2, 0, 4, 0, 8]))
 # [4, 4, 8, 0, 0, 0]
 # print(modifyAndRearrangeArr([0, 2, 2, 2, 0, 6, 6, 0, 0, 8]))
 # [4, 2, 12, 8, 0, 0, 0, 0, 0, 0]
-        
+
+
+# def modifyAndRearrangeArr(arr):
+#     res = []
+#     i = 0
+#     n = len(arr)
+#     while i < n:
+#         if i < n - 1 and arr[i] == arr[i + 1] and arr[i] != 0:
+#             res.append(arr[i] + arr[i + 1])
+#             i += 2
+#         elif arr[i] != 0:
+#             res.append(arr[i])
+#             i += 1
+#         else:
+#             i += 1
+#     res.extend([0] * (n - len(res)))
+#     return res
+#
+# def modArr(arr):
+#     res = []
+#     i = 0
+#     n = len(arr)
+#     while i < n:
+#         if i < n - 1 and arr[i] == arr[i + 1] and arr[i] != 0:
+#             res.append(arr[i] + arr[i + 1])
+#             i += 2
+#         elif arr[i] != 0:
+#             res.append(arr[i])
+#             i += 1
+#         else:
+#             i += 1
+#     res.extend([0] * (n - len(res)))
+#     return res
+
+    # i = 0
+    # n = len(arr)
+    # res = []
+    # while i < n:
+    #     if i < n - 1 and arr[i] == arr[i + 1] and arr[i] != 0:
+    #         res.append(arr[i] + arr[i + 1])
+    #         i += 2
+    #     elif arr[i] != 0:
+    #         res.append(arr[i])
+    #         i += 1
+    #     else:
+    #         i += 1
+    # res.extend([0] * (n - len(res)))
+    # return res
+
+from numpy.ma.core import max_val, min_val
+
+
+# print(modifyAndRearrangeArr([0, 2, 2, 2, 0, 6, 6, 0, 0, 8]))
+# print(modArr([0, 2, 2, 2, 0, 6, 6, 0, 0, 8]))
+# print(modifyAndRearrangeArr([2, 2, 0, 4, 0, 8]))
+# print(modifyAndRearrangeArr([2, 2, 0, 4, 0, 8]))
+# print(modArr([2, 2, 0, 4, 0, 8]))
+# print(modifyAndRearrangeArr([1, 3, 5]))
+# print(modifyAndRearrangeArr([]))
+# print(modifyAndRearrangeArr([0, 0, 0]))
+
+# def buyAndSell(arr):
+#     profit = 0
+#     max_val, min_val = 0, float('inf')
+#     for i in arr:
+#         min_val = min(min_val, i)
+#         print(min_val)
+#         profit = i - min_val
+#         print(profit)
+#         max_val = max(max_val, profit)
+#         print(max_val)
+#     return max_val
+#
+# print(buyAndSell([7, 10, 1, 3, 6, 9, 2]))
+# print(buyAndSell([7, 6, 4, 3, 1]))
+# print(buyAndSell([1, 3, 6, 9, 11]))
+
+
