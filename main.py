@@ -1554,6 +1554,41 @@ from numpy.ma.core import max_val, min_val
 # print(buyAndSell([1, 3, 6, 9, 11]))
 
 # Program for top k elements ( bucket sort )
-O(n)
+# O(n)
+# def topKElements(arr, k):
+#     count = {}
+#     freq = [[] for i in range(len(arr))]
+#     for i in arr:
+#         count[i] = 1 + count.get(i, 0)
+#     for n, c in count.items():
+#         freq[c].append(n)
+#     res = []
+#     for n in range(len(arr) - 1, 0, -1):
+#         print(n, "n", freq[n])
+#         for m in freq[n]:
+#             res.append(m)
+#             if len(res) == k:
+#                 return res
+        
 
+# arr = [1, 1, 1, 2, 2, 100]
+# k = 2
+# print(topKElements(arr, k))
+
+# Longest consecutive sequence
+# def longestConsecutive(nums):
+#     numSet = set(nums)
+#     longest = 0
+#     for n in nums:
+#         if (n - 1) not in numSet:
+#             length = 0
+#             while (n + length) in numSet:
+#                 length += 1
+#             longest = max(length, longest)
+#     return longest
+            
+        
+
+# arr = [10, 200, 1, 3, 2]
+# print(longestConsecutive(arr))
 

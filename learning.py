@@ -1,18 +1,15 @@
-def topKElements(arr, k):
-    count = {}
-    freq = [[] for i in range(len(arr))]
-    for i in arr:
-        count[i] = 1 + count.get(i, 0)
-    for n, c in count.items():
-        freq[c].append(n)
-    res = []
-    for n in range(len(arr) - 1, 0, -1):
-        print(n, "n", freq[n])
-        for k in freq[n]:
-            res.append(k)
+def longestConsecutive(nums):
+    numSet = set(nums)
+    longest = 0
+    for n in nums:
+        if (n - 1) not in numSet:
+            length = 0
+            while (n + length) in numSet:
+                length += 1
+            longest = max(length, longest)
+    return longest
             
+        
 
-
-arr = [1, 1, 1, 2, 2, 100]
-k = 2
-print(topKElements(arr, k))
+arr = [10, 200, 1, 3, 2]
+print(longestConsecutive(arr))
