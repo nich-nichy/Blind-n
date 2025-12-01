@@ -8,10 +8,9 @@ def topKElements(arr, k):
     res = []
     for n in range(len(arr) - 1, 0, -1):
         print(n, "n", freq[n])
-        for v in freq[n]:
-            res.append(v)
-            if len(res) == k:
-                return res
+        for k in freq[n]:
+            res.append(k)
+            
 
 
 arr = [1, 1, 1, 2, 2, 100]
