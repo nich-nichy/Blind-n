@@ -1592,3 +1592,27 @@ from numpy.ma.core import max_val, min_val
 # arr = [10, 200, 1, 3, 2]
 # print(longestConsecutive(arr))
 
+
+# def twoSum(arr, target):
+#     hashM = {}
+#     for i, n in enumerate(arr):
+#         diff = target - n
+#         if diff in hashM:
+#             return [i, arr[i]]
+#         hashM[i] = n
+#     return -1
+# arr = [1, 2, 4, 7, 8]
+# target = 5
+# print(twoSum(arr, target))
+
+def twoSum(arr, target):
+    hashM = {}
+    for i, n in enumerate(arr):
+        diff = target - n
+        if diff in hashM:
+            return [hashM[diff], i]
+        hashM[n] = i
+    return -1
+arr = [1, 2, 4, 7, 8]
+target = 5
+print(twoSum(arr, target))
