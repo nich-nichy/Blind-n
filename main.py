@@ -1616,3 +1616,19 @@ def twoSum(arr, target):
 arr = [1, 2, 4, 7, 8]
 target = 5
 print(twoSum(arr, target))
+
+
+def maximumProfit(prices):
+    res = 0
+    l, r = 0, 1
+    while r < len(prices):
+        if prices[l] <= prices[r]:
+            profit = prices[r] - prices[l]
+            res = max(res, profit)
+        else:
+            l = r
+        r += 1
+    return res
+arr = [1, 2, 3, 4, 5, 2]
+print(maximumProfit(arr))
+
