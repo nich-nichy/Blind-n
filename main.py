@@ -1632,3 +1632,35 @@ def maximumProfit(prices):
 arr = [1, 2, 3, 4, 5, 2]
 print(maximumProfit(arr))
 
+def threeSum(nums, target):
+    res = []
+    nums.sort()
+    for i, t in enumerate(nums):
+        if i > 0 and t == nums[i - 1]:
+            continue
+        l, r = i + 1, len(nums) - 1
+        while l < r:
+            diff = t + nums[l] + nums[r]
+            if diff > 0:
+                r -= 1
+            elif diff < 0:
+                l += 1
+            else:
+                res.append([t, nums[l], nums[r]])
+                l += 1
+                while nums[i] == nums[i - 1] and l < r:
+                    l += 1
+    return res
+
+arrE = [-1, 0, 1, 2, -1, -4]
+target = 0
+print(threeSum(arrE, target))
+
+result store original arr sort
+check if index is > 0 and the number is not as same as the left one if yes skip it continue
+then start two sum two keeping pointers l should be i + 1 and r should be arr of last element
+find the current sum by adding arrl, r, and the current for loop val example: a
+if the sum is greater reduce r if the sum is lesser update the l then if both alighns what we ant store it in res and
+there is a special case
+if the number repetitive so again check the while loop with arr[l] arr[l - 1] equal then check whether
+it goes out of bounce then return the result
