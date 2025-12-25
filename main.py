@@ -1632,29 +1632,28 @@ def maximumProfit(prices):
 arr = [1, 2, 3, 4, 5, 2]
 print(maximumProfit(arr))
 
-def threeSum(nums, target):
-    res = []
-    nums.sort()
-    for i, t in enumerate(nums):
-        if i > 0 and t == nums[i - 1]:
-            continue
-        l, r = i + 1, len(nums) - 1
-        while l < r:
-            diff = t + nums[l] + nums[r]
-            if diff > 0:
-                r -= 1
-            elif diff < 0:
-                l += 1
-            else:
-                res.append([t, nums[l], nums[r]])
-                l += 1
-                while nums[i] == nums[i - 1] and l < r:
+def threeSum(self, nums: List[int]) -> List[List[int]]:
+        res = []
+        nums.sort()
+        for i, a in enumerate(nums):
+            if a > 0:
+                break
+            if i > 0 and a == nums[i - 1]:
+                continue
+            l, r = i + 1, len(nums) - 1
+            while l < r:
+                threeSum = a + nums[l] + nums[r]
+                if threeSum > 0:
+                    r -= 1
+                elif threeSum < 0:
                     l += 1
-    return res
-
-arrE = [-1, 0, 1, 2, -1, -4]
-target = 0
-print(threeSum(arrE, target))
+                else:
+                    res.append([a, nums[l], nums[r]])
+                    l += 1
+                    r -= 1
+                    while nums[l] == nums[l - 1] and l < r:
+                        l += 1
+        return res
 
 result store original arr sort
 check if index is > 0 and the number is not as same as the left one if yes skip it continue
