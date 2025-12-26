@@ -1663,3 +1663,29 @@ if the sum is greater reduce r if the sum is lesser update the l then if both al
 there is a special case
 if the number repetitive so again check the while loop with arr[l] arr[l - 1] equal then check whether
 it goes out of bounce then return the result
+
+
+def lengthOfLongestSubstring(self, s: str) -> int:
+    charSet = set()
+    l = 0
+    res = 0
+    for r in range(len(s)):
+        while s[r] in charSet:
+            charSet.remove(s[l])
+            l += 1
+        charSet.append(s[r])
+        res = max(res, l - r + 1)
+    return res
+
+
+def lengthOfLongestSubstring(self, s: str) -> int:
+        consec = set()
+        l = 0
+        res = 0
+        for r in range(len(s)):
+            while s[r] in consec:
+                consec.remove(s[l])
+                l += 1
+            consec.add(s[r])
+            res = max(res, r - l + 1)
+        return res
