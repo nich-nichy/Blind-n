@@ -1938,3 +1938,16 @@ class Solution:
                 l += 1
             res = max(res, r - l + 1)
         return res
+
+def isValid(s):
+        stack = []
+        checkClose = {')' : '(', '}' : '{', ']' : '['}
+        for c in s:
+            if c in checkClose:
+                if stack and stack[-1] == checkClose[c]:
+                    stack.pop()
+                else:
+                    return False
+            else:
+                stack.append(c)
+        return True if not stack else False
